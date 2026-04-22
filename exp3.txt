@@ -1,0 +1,6 @@
+Experiment 3: GitHub Repository Creation and Push
+
+Step 1: Configure Git (one time)
+git config --global user.name "Your Name"
+git config --global user.email "your_email@example.com"
+credential.helper=manager
