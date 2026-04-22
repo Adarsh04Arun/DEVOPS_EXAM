@@ -1,0 +1,9 @@
+docker ps
+docker ps -a
+docker run hello-world
+docker pull nginx
+docker -d -p 8000:80 nginx (localhost:8000)
+docker stop <container_id>
+docker start <container_id>
+docker rm <container_id>
+docker rmi <image_id>
