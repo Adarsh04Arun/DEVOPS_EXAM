@@ -1,0 +1,80 @@
+mvn archetype:generate
+
+# Step 7: Choose a number you will get, type 2309
+# Step 8: Choose a number: 9 (choose latest version)
+
+# Step 9: Define value for property groupId
+org.bnm
+# or
+com.google
+
+# Step 10: Define value for property artifactId
+maven-demo
+
+# Step 11: Define value for property version
+1.0-SNAPSHOT
+
+# Step 12: Define value for property package
+org.bnm.demo
+
+# Step 13: Type Y and press Enter
+Y
+
+# Step 14: Go back to the folder you have created
+cd maven-demo
+mvn clean package
+
+# Step 19: Go to target folder
+cd target
+
+# Step 20: Verify JAR file
+dir
+# Output: maven-demo-1.0-SNAPSHOT.jar
+
+
+ static class BankAccount {
+        private double balance;
+
+        public BankAccount(double initialBalance) {
+            if (initialBalance < 0) {
+                throw new IllegalArgumentException("Initial balance cannot be negative");
+            }
+            this.balance = initialBalance;
+        }
+
+        public void deposit(double amount) {
+            if (amount <= 0) {
+                throw new IllegalArgumentException("Deposit must be positive");
+            }
+            balance += amount;
+        }
+
+        public void withdraw(double amount) {
+            if (amount <= 0 || amount > balance) {
+                throw new IllegalArgumentException("Invalid withdrawal");
+            }
+            balance -= amount;
+        }
+
+        public double getBalance() {
+            return balance;
+        }
+    }
+
+    // The main entry point
+    public static void main(String[] args) {
+        // Create an instance of the BankAccount class
+        BankAccount acc = new BankAccount(5000);
+        
+        System.out.println("Initial Balance: " + acc.getBalance());
+
+        // Perform operations
+        acc.deposit(700);
+        System.out.println("Balance after deposit of 500: " + acc.getBalance());
+
+        acc.withdraw(100);
+        System.out.println("Balance after withdrawal of 300: " + acc.getBalance());
+
+        // Print final result
+        System.out.println("Final Balance: " + acc.getBalance());
+    }
