@@ -20,4 +20,15 @@ public class CalculatorTest {
     void testSubtraction() {
         assertEquals(1, calculator.subtract(2,3));
     }
+    @Test
+    public void testDivide() {
+        int result = cal.divide(10, 2);
+        assertEquals(5, result);
+    }
+    @Test
+    void testDivisionByZero() {
+        assertThrows(ArithmeticException.class, () -> {
+            cal.divide(10, 0);
+        });
+}
 }
